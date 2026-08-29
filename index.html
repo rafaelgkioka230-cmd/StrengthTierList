@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strength - Tier - List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Strength - Tier - List</h1>
+      <p class="subtitle">Rank players into tiers. Owner-only controls available.</p>
+    </header>
+
+    <div class="controls">
+      <input id="playerInput" placeholder="Player name" />
+      <select id="tierSelect">
+        <option value="s">S</option>
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+        <option value="d">D</option>
+        <option value="spear">Spear</option>
+      </select>
+      <button id="addBtn">Add Player</button>
+      <button id="ownerToggle" class="owner-btn">Owner Mode: OFF</button>
+      <button id="clearBtn" class="clear-btn">Clear All Players</button>
+    </div>
+
+    <div class="share-section">
+      <button id="shareBtn" class="share-btn">Share current list</button>
+      <input id="shareLink" readonly placeholder="Share link will appear here" />
+      <button id="copyBtn" class="copy-btn">Copy</button>
+    </div>
+
+    <section class="tier-list" id="tierListContainer">
+      <!-- Tiers rendered here -->
+    </section>
+
+    <footer style="margin-top:18px;color:#bbb">
+      Owners: <span id="ownersList"></span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
