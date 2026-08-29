@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid #ff3333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #ff3333;
+    text-shadow: 0 2px 10px rgba(255, 51, 51, 0.3);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#playerInput,
+#tierSelect {
+    padding: 12px 15px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #444444;
+    border-radius: 5px;
+    font-size: 1em;
+    flex: 1;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+#playerInput:focus,
+#tierSelect:focus {
+    outline: none;
+    border-color: #ff3333;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #ff3333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #ff5555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.owner-btn {
+    background-color: #666666;
+    min-width: 150px;
+}
+
+.owner-btn.active {
+    background-color: #00cc00;
+    box-shadow: 0 0 15px rgba(0, 204, 0, 0.5);
+}
+
+.clear-btn {
+    background-color: #cc0000;
+}
+
+.clear-btn:hover {
+    background-color: #ff3333;
+}
+
+.share-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    background-color: #0066cc;
+    padding: 10px 20px;
+}
+
+.share-btn:hover {
+    background-color: #0088ff;
+}
+
+#shareLink {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px 15px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 2px solid #0066cc;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.copy-btn {
+    padding: 10px 20px;
+    background-color: #00aa00;
+}
+
+.copy-btn:hover {
+    background-color: #00dd00;
+}
+
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tier {
+    display: flex;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid;
+}
+
+.tier-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.spear-tier {
+    border-left-color: #ff00ff;
+    background: linear-gradient(90deg, #2a1a2a 0%, #1a0a1a 100%);
+}
+
+.spear-tier .tier-label {
+    background-color: #ff00ff;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(255, 0, 255, 0.5);
+}
+
+.s-tier {
+    border-left-color: #ff3333;
+}
+
+.s-tier .tier-label {
+    background-color: #ff3333;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(255, 51, 51, 0.5);
+}
+
+.a-tier {
+    border-left-color: #ff9900;
+}
+
+.a-tier .tier-label {
+    background-color: #ff9900;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(255, 153, 0, 0.5);
+}
+
+.b-tier {
+    border-left-color: #ffff00;
+}
+
+.b-tier .tier-label {
+    background-color: #ffff00;
+    color: #000000;
+    text-shadow: 0 2px 10px rgba(255, 255, 0, 0.3);
+}
+
+.c-tier {
+    border-left-color: #00cc00;
+}
+
+.c-tier .tier-label {
+    background-color: #00cc00;
+    color: #000000;
+    text-shadow: 0 2px 10px rgba(0, 204, 0, 0.3);
+}
+
+.d-tier {
+    border-left-color: #0066ff;
+}
+
+.d-tier .tier-label {
+    background-color: #0066ff;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 102, 255, 0.5);
+}
+
+.players {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    overflow-x: auto;
+    background-color: #1a1a1a;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+    min-width: fit-content;
+    border: 2px solid #444444;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.player-card:hover {
+    border-color: #ff3333;
+    box-shadow: 0 3px 10px rgba(255, 51, 51, 0.3);
+    transform: scale(1.05);
+}
+
+.player-name {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.remove-btn {
+    background-color: #ff3333;
+    color: #ffffff;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #ff5555;
+    transform: rotate(90deg) scale(1.2);
+}
+
+.remove-btn:active {
+    transform: rotate(90deg) scale(1);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    #playerInput,
+    #tierSelect {
+        min-width: 100%;
+    }
+
+    .tier {
+        height: 80px;
+    }
+
+    .tier-label {
+        width: 80px;
+        font-size: 1.2em;
+    }
+
+    .players {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .player-card {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Scrollbar styling */
+.players::-webkit-scrollbar {
+    height: 6px;
+}
+
+.players::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 3px;
+}
+
+.players::-webkit-scrollbar-thumb {
+    background: #ff3333;
+    border-radius: 3px;
+}
+
+.players::-webkit-scrollbar-thumb:hover {
+    background: #ff5555;
+}
