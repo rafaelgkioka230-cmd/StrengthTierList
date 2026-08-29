@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital World Clock</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <div class="clock-container">
+        <header>
+            <h1 class="clock-title">Digital World Clock</h1>
+            <p class="subtitle">Current time in different time zones</p>
+        </header>
+
+        <div class="controls">
+            <input type="text" id="timezoneSearch" placeholder="Search timezone...">
+            <button id="addTimezoneBtn" class="add-timezone-btn">+ Add Timezone</button>
+        </div>
+
+        <div class="timezone-dropdown" id="timezoneDropdown" style="display: none;">
+            <input type="text" id="timezoneFilter" placeholder="Filter timezones...">
+            <div class="timezone-list" id="timezoneList"></div>
+        </div>
+
+        <div class="clocks-grid" id="clocksGrid">
+            <!-- Clock cards will be added here -->
+        </div>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
